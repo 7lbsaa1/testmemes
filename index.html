@@ -800,13 +800,13 @@
     </div>
 
     <script>
-        // بيانات الاعتماد المشرف المعدلة
+        // بيانات الاعتماد المشرف
         const ADMIN_CREDENTIALS = {
             username: '123',
             password: 'omarmeme'
         };
 
-        // قائمة الصور التي قدمتها
+        // قائمة الصور الافتراضية (تُحمل فقط في أول مرة)
         const imagesList = [
             { id: 1, src: "timps/meme1 .jpg" },
             { id: 2, src: "https://p16-comment-sign-sg.tiktokcdn.com/tos-alisg-i-zt8igodiya-sg/2869fb2207c44a1eb7420aefadbc15d7~tplv-jj85edgx6n-image-origin.jpeg?dr=8569&refresh_token=762e42db&x-expires=1793361600&x-signature=J0418rGsm5PoKAMzPwAvWlCiA4U%3D&t=67a6c45e&ps=a0626fcd&shp=ff37627b&shcp=ff37627b&idc=my" },
@@ -972,18 +972,22 @@
             { id: 162, src: "timps/meme149.jpg" },
         ];
 
-        // تحويل القائمة إلى بيانات الميمز المعتمدة
-        let memeData = imagesList.map(img => ({
-            id: img.id,
-            src: img.src,
-            status: 'approved',
-            uploadDate: new Date().toISOString()
-        }));
-
-        let nextId = Math.max(...memeData.map(m => m.id)) + 1 || 163;
+        // --- متغيرات عامة ---
+        let memeData = [];        // هتحتوي على كل الميمز (معتمدة + بانتظار)
+        let nextId = 163;         // رقم ID التالي للصورة الجديدة
         let isLoggedIn = false;
 
-        // إدارة الوضع الليلي
+        // --- دالة الحفظ في LocalStorage ---
+        function saveData() {
+            try {
+                localStorage.setItem('7lbsaa_memes', JSON.stringify(memeData));
+            } catch (e) {
+                console.error("فشل في حفظ البيانات", e);
+                showMessage('error', '⚠️ فشل في حفظ البيانات (قد تكون مساحة المتصفح ممتلئة)');
+            }
+        }
+
+        // --- إدارة الوضع الليلي ---
         function initTheme() {
             const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
             if (prefersDark) {
@@ -998,7 +1002,7 @@
             document.getElementById('themeToggle').innerHTML = isDark ? '☀️' : '🌙';
         }
 
-        // التنقل بين الصفحات
+        // --- التنقل بين الصفحات ---
         function showPage(page) {
             document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
             document.querySelectorAll('.nav-button').forEach(b => b.classList.remove('active'));
@@ -1022,7 +1026,7 @@
             }
         }
 
-        // رفع الصور
+        // --- رفع الصور ---
         function handleImageUpload(event) {
             const file = event.target.files[0];
             if (!file) return;
@@ -1047,6 +1051,9 @@
                 };
                 memeData.push(newMeme);
                 
+                // --- حفظ التعديل في المتصفح ---
+                saveData();
+                
                 // عرض رسالة التأكيد
                 document.getElementById('confirmationMessage').style.display = 'block';
                 showMessage('success', '✅ تم رفع الصورة بنجاح!');
@@ -1061,7 +1068,7 @@
             event.target.value = '';
         }
 
-        // عرض الميمز المعتمدة
+        // --- عرض الميمز المعتمدة ---
         function renderApprovedMemes() {
             const container = document.getElementById('approvedGallery');
             const emptyState = document.getElementById('emptyApproved');
@@ -1082,7 +1089,7 @@
             });
         }
 
-        // عرض الميمز بانتظار المراجعة
+        // --- عرض الميمز بانتظار المراجعة ---
         function renderPendingMemes() {
             const container = document.getElementById('pendingGallery');
             const emptyState = document.getElementById('emptyPending');
@@ -1103,7 +1110,7 @@
             });
         }
 
-        // إنشاء بطاقة ميمز
+        // --- إنشاء بطاقة ميمز ---
         function createMemeCard(meme, isAdmin, index) {
             const card = document.createElement('div');
             card.className = 'image-card';
@@ -1145,7 +1152,7 @@
             return card;
         }
 
-        // تحميل الميمز
+        // --- تحميل الميمز ---
         async function downloadMeme(id, btn) {
             const meme = memeData.find(m => m.id === id);
             if (!meme) return;
@@ -1173,7 +1180,7 @@
             }
         }
 
-        // اعتماد الميمز
+        // --- اعتماد الميمز ---
         function approveMeme(id) {
             const meme = memeData.find(m => m.id === id);
             if (meme) {
@@ -1181,22 +1188,30 @@
                 renderPendingMemes();
                 updateStats();
                 renderApprovedMemes();
+                
+                // --- حفظ التغيير في المتصفح ---
+                saveData();
+                
                 showMessage('success', '✅ تم اعتماد الميمز بنجاح!');
             }
         }
 
-        // رفض الميمز
+        // --- رفض الميمز ---
         function rejectMeme(id) {
             const index = memeData.findIndex(m => m.id === id);
             if (index > -1) {
                 memeData.splice(index, 1);
                 renderPendingMemes();
                 updateStats();
+                
+                // --- حفظ التغيير في المتصفح ---
+                saveData();
+                
                 showMessage('success', '✅ تم رفض الميمز');
             }
         }
 
-        // تحديث الإحصائيات
+        // --- تحديث الإحصائيات ---
         function updateStats() {
             const pending = memeData.filter(m => m.status === 'pending').length;
             const approved = memeData.filter(m => m.status === 'approved').length;
@@ -1206,7 +1221,7 @@
             document.getElementById('totalCount').textContent = memeData.length;
         }
 
-        // تسجيل الدخول
+        // --- تسجيل الدخول ---
         function handleLogin() {
             const username = document.getElementById('username').value.trim();
             const password = document.getElementById('password').value;
@@ -1226,14 +1241,14 @@
             }
         }
 
-        // تسجيل الخروج
+        // --- تسجيل الخروج ---
         function handleLogout() {
             isLoggedIn = false;
             showPage('memes');
             showMessage('success', '✅ تم تسجيل الخروج');
         }
 
-        // عرض الرسائل
+        // --- عرض الرسائل ---
         function showMessage(type, text) {
             const msg = document.getElementById(type === 'success' ? 'successMsg' : 'errorMsg');
             msg.textContent = text;
@@ -1244,8 +1259,28 @@
             }, 3000);
         }
 
-        // تشغيل التطبيق
+        // --- تشغيل التطبيق ---
         document.addEventListener('DOMContentLoaded', function() {
+            // --- جديد: قراءة البيانات المحفوظة من LocalStorage ---
+            const savedData = localStorage.getItem('7lbsaa_memes');
+            if (savedData) {
+                // لو فيه بيانات محفوظة (المستخدم فتح الموقع قبل كده)
+                memeData = JSON.parse(savedData);
+                // تحديث nextId عشان ما تتكرر الأرقام
+                nextId = Math.max(...memeData.map(m => m.id)) + 1;
+            } else {
+                // أول مرة يفتح الموقع: نحمّل الصور الافتراضية كمعتمدة
+                memeData = imagesList.map(img => ({
+                    id: img.id,
+                    src: img.src,
+                    status: 'approved',
+                    uploadDate: new Date().toISOString()
+                }));
+                nextId = Math.max(...memeData.map(m => m.id)) + 1;
+                // وحفظهم عشان المرات الجاية
+                saveData();
+            }
+            
             initTheme();
             renderApprovedMemes();
             
@@ -1255,7 +1290,7 @@
             });
         });
 
-        // إضافة ميمز تجريبية تلقائياً للعرض
+        // --- إضافة ميمز تجريبية تلقائياً (للاختبار) ---
         setInterval(() => {
             if (Math.random() > 0.85) {
                 const colors = ['%233498db', '%232ecc71', '%23e74c3c', '%23f39c12', '%239b59b6'];
@@ -1267,6 +1302,9 @@
                     uploadDate: new Date().toISOString()
                 };
                 memeData.push(newMeme);
+                
+                // --- حفظ الميمز التلقائي الجديد ---
+                saveData();
                 
                 if (isLoggedIn && document.getElementById('admin-page').classList.contains('active')) {
                     renderPendingMemes();
