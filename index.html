@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="VtG7Ro7J-T9g1SR1m9kVf5uRQ-Y2hhUU6AHlDqdSjHI" />
+    
+    <title>موقع حلبسة | 7lbsaa - المنصة الرسمية للتمبات والميمز</title>
+    <link rel="shortcut icon" type="image/jpg" href="logox.jpg">
+
+    <!-- SEO -->
+    <meta name="description" content="موقع حلبسة (7lbsaa): المنصة الرسمية لأقوى تمبات وميمز، صور ضحك، ومحتوى ثانوية عامة.">
+    <meta name="keywords" content="7lbsaa, 7lbsaa1, موقع حلبسة, منصة حلبسة, صفحة حلبسة, حلبسة ميمز">
+    <link rel="canonical" href="https://7lbsaa1.github.io/7lbsaa.memes/" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://7lbsaa1.github.io/7lbsaa/" />
+    <meta property="og:title" content="موقع حلبسة | 7lbsaa" />
+    <meta property="og:description" content="موقع حلبسة (7lbsaa): تمبات، صور ضحك، وميمز ثانوية عامة." />
+    <meta property="og:image" content="https://7lbsaa1.github.io/7lbsaa/logox1.jpg" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="موقع حلبسة | 7lbsaa" />
+    <meta name="twitter:description" content="موقع حلبسة (7lbsaa): تمبات، صور ضحك، وميمز ثانوية عامة." />
+    <meta name="twitter:image" content="https://7lbsaa1.github.io/7lbsaa/logox1.jpg" />
+    
+    <style>
+        /* (لم يتغير - يبقى كما هو) */
+        :root{--bg-color:#4a7fa7;--bg-color-2:#1a3d63;--text-color:white;--card-bg:white;--shadow-color:rgba(61,45,133,.3);--button-bg:linear-gradient(135deg,#2549e7 0%,#764ba2);--button-hover:rgba(102,126,234,.4);--message-success:#4caf50;--message-error:#ce2d21;--admin-color:#9c27b0;--pending-color:#ff9800;--approved-color:#4caf50;}
+        .dark-mode{--bg-color:#242f49;--bg-color-2:#11212d;--text-color:#e0e0e0;--card-bg:#0d101c;--shadow-color:rgba(0,0,0,.5);--button-bg:linear-gradient(135deg,#4a4a8a 0%,#6a4c93);--button-hover:rgba(102,126,234,.6);--message-success:#3a7d44;--message-error:#9e1616;--admin-color:#7b1fa2;--pending-color:#f57c00;--approved-color:#388e3c;}
+
+        *{margin:0;padding:0;box-sizing:border-box;transition:background-color .3s,color .3s;}
+        body{font-family:'Segoe UI',Tahoma,Geneva,verdana,sans-serif;background:linear-gradient(135deg,var(--bg-color) 0%,var(--bg-color-2));min-height:100vh;padding:20px;color:var(--text-color);}
+        .container{max-width:1200px;margin:auto;}
+
+        /* شريط التنقل */
+        .top-bar{display:flex;justify-content:space-between;align-items:center;margin-bottom:25px;padding:15px 20px;background:rgba(255,255,255,.08);border-radius:15px;backdrop-filter:blur(10px);flex-wrap:wrap;gap:15px;}
+        .brand{font-size:1.5em;font-weight:bold;}
+        .nav-controls{display:flex;gap:10px;align-items:center;flex-wrap:wrap;}
+
+        .nav-tabs{display:flex;justify-content:center;gap:15px;margin-bottom:30px;flex-wrap:wrap;}
+        .nav-button{padding:12px 25px;background:var(--card-bg);color:var(--text-color);border:none;border-radius:50px;font-size:1rem;font-weight:600;cursor:pointer;transition:all .3s;display:flex;align-items:center;gap:8px;box-shadow:0 5px 15px var(--shadow-color);}
+        .nav-button:hover{transform:translateY(-3px);box-shadow:0 8px 20px var(--shadow-color);}
+        .nav-button.active{background:var(--button-bg);color:#fff;}
+
+        .theme-toggle{background:var(--card-bg);color:var(--text-color);border:none;border-radius:50%;width:45px;height:45px;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 3px 10px var(--shadow-color);transition:all .3s;font-size:1.2em;}
+        .theme-toggle:hover{transform:scale(1.1) rotate(15deg);}
+
+        .page{display:none;animation:fadeIn .5s ease-out;}
+        .page.active{display:block;}
+        @keyframes fadeIn{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
+
+        /* الهيدر */
+        .header{text-align:center;margin-bottom:40px;animation:slideDown .6s ease-out;}
+        .header h1{font-size:2.5em;margin-bottom:10px;text-shadow:2px 2px 4px rgba(0,0,0,.3);}
+        .header p{font-size:1.1em;opacity:.9;}
+        @keyframes slideDown{from{opacity:0;transform:translateY(-30px);}to{opacity:1;transform:translateY(0);}}
+
+        /* قسم الرفع */
+        .upload-section{background:rgba(255,255,255,.05);border-radius:20px;padding:30px;margin-bottom:30px;text-align:center;border:2px dashed rgba(0,219,222,.4);}
+        .upload-btn{display:inline-flex;align-items:center;gap:10px;padding:16px 32px;background:var(--button-bg);color:#fff;border:none;border-radius:50px;font-size:1.1rem;font-weight:600;cursor:pointer;transition:transform .3s,box-shadow .3s;margin:20px 0;}
+        .upload-btn:hover{transform:scale(1.05);box-shadow:0 6px 20px var(--button-hover);}
+        .upload-btn:active{transform:scale(.98);}
+        #fileInput{display:none;}
+        .preview-container{max-width:300px;margin:20px auto;display:none;}
+        .preview-image{width:100%;border-radius:12px;box-shadow:0 8px 25px rgba(0,0,0,.3);}
+        .confirmation-message{background:rgba(76,175,80,.15);border:1px solid rgba(76,175,80,.3);border-radius:12px;padding:20px;margin-top:20px;display:none;animation:slideIn .5s ease;}
+        .confirmation-message h3{color:var(--approved-color);margin-bottom:10px;}
+        @keyframes slideIn{from{opacity:0;transform:translateY(-10px);}to{opacity:1;transform:translateY(0);}}
+
+        /* المعرض */
+        .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:30px;padding:20px;}
+        .image-card{background:var(--card-bg);border-radius:15px;overflow:hidden;box-shadow:0 10px 30px var(--shadow-color);transition:all .3s;animation:fadeIn .6s ease-out;opacity:0;position:relative;}
+        .image-card:nth-child(1){animation-delay:.1s}.image-card:nth-child(2){animation-delay:.2s}.image-card:nth-child(3){animation-delay:.3s}.image-card:nth-child(4){animation-delay:.4s}.image-card:nth-child(5){animation-delay:.5s}.image-card:nth-child(6){animation-delay:.6s}
+        .image-card:hover{transform:translateY(-10px);box-shadow:0 20px 40px var(--shadow-color);}
+        .image-container{width:100%;height:350px;overflow:hidden;background:#f0f0f0;position:relative;}
+        .dark-mode .image-container{background:#1a1a2e;}
+        .image-container img{width:100%;height:100%;object-fit:cover;transition:transform .3s;}
+        .image-card:hover .image-container img{transform:scale(1.05);}
+        .status-badge-overlay{position:absolute;top:15px;left:15px;padding:6px 14px;border-radius:20px;font-size:.85rem;font-weight:600;color:#fff;z-index:10;}
+        .status-pending{background:var(--pending-color);}
+        .status-approved{background:var(--approved-color);}
+
+        .button-container{padding:15px;display:flex;justify-content:center;gap:10px;flex-wrap:wrap;}
+        .download-button{padding:12px 30px;background:var(--button-bg);color:#fff;border:none;border-radius:8px;font-size:1em;font-weight:600;cursor:pointer;transition:all .3s;display:flex;align-items:center;justify-content:center;gap:8px;min-width:150px;}
+        .download-button:hover{transform:scale(1.05);box-shadow:0 5px 15px var(--button-hover);}
+        .download-button:active{transform:scale(.98);}
+        .download-button.loading{opacity:.7;cursor:not-allowed;}
+        .icon{font-size:1.2em;}
+
+        /* صفحة الإدارة */
+        .admin-section{background:rgba(255,255,255,.05);border-radius:20px;padding:30px;margin-bottom:30px;border:2px solid var(--admin-color);}
+        .login-form{max-width:400px;margin:0 auto;background:rgba(255,255,255,.05);border-radius:15px;padding:30px;border:1px solid rgba(255,255,255,.1);}
+        .login-form h2{text-align:center;margin-bottom:20px;}
+        .form-group{margin-bottom:25px;}
+        .form-group label{display:block;margin-bottom:8px;font-weight:600;}
+        .form-input{width:100%;padding:14px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);border-radius:10px;color:var(--text-color);font-size:1rem;transition:border-color .3s;}
+        .form-input:focus{outline:none;border-color:var(--admin-color);}
+        .login-btn{width:100%;padding:16px;background:var(--admin-color);color:#fff;border:none;border-radius:10px;font-size:1.1rem;font-weight:600;cursor:pointer;transition:transform .3s;}
+        .login-btn:hover{transform:scale(1.02);}
+
+        .admin-controls{display:flex;gap:15px;margin-top:20px;justify-content:center;flex-wrap:wrap;}
+        .admin-btn{padding:10px 24px;border:none;border-radius:8px;font-weight:600;cursor:pointer;transition:all .3s;min-width:120px;}
+        .approve-btn{background:var(--approved-color);color:#fff;}
+        .approve-btn:hover{background:#388e3c;transform:translateY(-2px);}
+        .reject-btn{background:var(--message-error);color:#fff;}
+        .reject-btn:hover{background:#b71c1c;transform:translateY(-2px);}
+
+        .status-badge{display:inline-block;padding:5px 12px;border-radius:20px;font-size:.85rem;font-weight:600;margin-top:10px;}
+        .pending-badge{background:rgba(255,152,0,.2);color:var(--pending-color);}
+        .approved-badge{background:rgba(76,175,80,.2);color:var(--approved-color);}
+
+        /* إحصائيات الإدارة */
+        .admin-stats{display:flex;justify-content:center;gap:30px;margin-bottom:30px;flex-wrap:wrap;}
+        .stat-card{background:rgba(255,255,255,.08);padding:20px 30px;border-radius:15px;text-align:center;min-width:150px;}
+        .stat-number{font-size:2em;font-weight:bold;color:var(--admin-color);}
+        .stat-label{font-size:.9em;opacity:.8;}
+
+        .logout-btn{background:var(--message-error);color:#fff;padding:10px 20px;border:none;border-radius:8px;cursor:pointer;font-weight:600;transition:all .3s;}
+        .logout-btn:hover{background:#b71c1c;transform:translateY(-2px);}
+
+        /* رسائل التنبيه */
+        .message{position:fixed;top:20px;left:50%;transform:translateX(-50%);padding:15px 30px;border-radius:10px;display:none;z-index:1000;animation:messageSlide .3s ease-out;box-shadow:0 5px 20px rgba(0,0,0,.3);color:#fff;text-align:center;font-weight:600;max-width:90%;}
+        .message.success{background:var(--message-success);}
+        .message.error{background:var(--message-error);}
+        .message.show{display:block;}
+        @keyframes messageSlide{from{transform:translateX(-50%) translateY(-100px);opacity:0;}to{transform:translateX(-50%) translateY(0);opacity:1;}}
+
+        /* حالة الفراغ */
+        .empty-state{text-align:center;padding:50px 20px;color:var(--text-color);opacity:.7;}
+        .empty-icon{font-size:4em;margin-bottom:15px;}
+
+        /* التجاوب */
+        @media (max-width:768px){
+            .top-bar{flex-direction:column;text-align:center;}
+            .nav-controls{width:100%;justify-content:center;}
+            .header h1{font-size:2em;}
+            .gallery{grid-template-columns:1fr;gap:20px;padding:10px;}
+            .image-container{height:280px;}
+            .admin-stats{gap:15px;}
+            .stat-card{min-width:120px;padding:15px 20px;}
+            .login-form{padding:20px;}
+        }
+        @media (max-width:480px){
+            body{padding:10px;}
+            .header h1{font-size:1.7em;}
+            .nav-button{padding:10px 18px;font-size:.9rem;}
+            .image-container{height:250px;}
+        }
+    </style>
+</head>
+<body>
+    <!-- رسائل التنبيه -->
+    <div class="message success" id="successMsg">✓ تمت العملية بنجاح!</div>
+    <div class="message error" id="errorMsg">✗ حدث خطأ في العملية</div>
+
+    <div class="container">
+        <!-- شريط علوي -->
+        <div class="top-bar">
+            <div class="brand">🎭 حلبسة | 7lbsaa</div>
+            <div class="nav-controls">
+                <button class="nav-button active" id="memesTabBtn" onclick="showPage('memes')">
+                    🖼️ الميمز
+                </button>
+                <button class="nav-button" id="adminTabBtn" onclick="showPage('admin')">
+                    🔐 الإدارة
+                </button>
+                <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()">🌙</button>
+            </div>
+        </div>
+
+        <!-- صفحة الميمز (للمستخدمين) -->
+        <div id="memes-page" class="page active">
+            <div class="header">
+                <h1>خد احسن التمبات من هنا 😍</h1>
+                <p>دوس علي تحميل و خد الصورة اللي عايزيها ❤️</p>
+            </div>
+
+            <!-- قسم رفع الصور -->
+            <div class="upload-section">
+                <h2>شارك ميمزك معنا! 🎉</h2>
+                <p>ارفع صورتك وهتظهر بعد مراجعة الإدارة</p>
+                <button class="upload-btn" onclick="document.getElementById('fileInput').click()">
+                    📤 رفع ميمز جديد
+                </button>
+                <input type="file" id="fileInput" accept="image/*" onchange="handleImageUpload(event)">
+                
+                <div class="preview-container" id="previewContainer">
+                    <img class="preview-image" id="previewImage" alt="معاينة">
+                </div>
+                
+                <div class="confirmation-message" id="confirmationMessage">
+                    <h3>✅ تم استلام صورتك!</h3>
+                    <p>صورتك هتظهر بعد مراجعة الإدارة وشكرا لمساهمتك 💜</p>
+                </div>
+            </div>
+
+            <h2 style="text-align: center; margin-bottom: 20px;">📸 الميمز المعتمدة</h2>
+            
+            <div class="gallery" id="approvedGallery">
+                <!-- الصور المعتمدة هتظهر هنا -->
+            </div>
+
+            <div class="empty-state" id="emptyApproved" style="display: none;">
+                <div class="empty-icon">📭</div>
+                <h3>لا توجد ميمز معتمدة حالياً</h3>
+                <p>كن أول من يشارك ميمز!</p>
+            </div>
+        </div>
+
+        <!-- صفحة الإدارة -->
+        <div id="admin-page" class="page">
+            <!-- نموذج تسجيل الدخول -->
+            <div id="loginSection">
+                <div class="admin-section">
+                    <div class="login-form">
+                        <h2>🔒 تسجيل دخول المشرف</h2>
+                        
+                        <div class="form-group">
+                            <label for="username">اسم المستخدم</label>
+                            <input type="text" id="username" class="form-input" placeholder="أدخل اسم المستخدم">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="password">كلمة المرور</label>
+                            <input type="password" id="password" class="form-input" placeholder="أدخل كلمة المرور">
+                        </div>
+                        
+                        <button class="login-btn" onclick="handleLogin()">🚀 دخول</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- لوحة الإدارة -->
+            <div id="adminDashboard" style="display: none;">
+                <div class="header">
+                    <h1>🛠️ لوحة تحكم المشرف</h1>
+                    <p>مراجعة واعتماد الميمز المرفوعة</p>
+                </div>
+
+                <!-- إحصائيات -->
+                <div class="admin-stats">
+                    <div class="stat-card">
+                        <div class="stat-number" id="pendingCount">0</div>
+                        <div class="stat-label">بانتظار المراجعة</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="approvedCount">0</div>
+                        <div class="stat-label">معتمدة</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="totalCount">0</div>
+                        <div class="stat-label">إجمالي الميمز</div>
+                    </div>
+                </div>
+
+                <div style="text-align: center; margin-bottom: 20px;">
+                    <button class="logout-btn" onclick="handleLogout()">🚪 تسجيل الخروج</button>
+                </div>
+
+                <h2 style="text-align: center; margin-bottom: 20px;">⏳ الميمز بانتظار المراجعة</h2>
+                
+                <div class="gallery" id="pendingGallery"></div>
+
+                <div class="empty-state" id="emptyPending" style="display: none;">
+                    <div class="empty-icon">🎉</div>
+                    <h3>مفيش ميمز بانتظار المراجعة</h3>
+                    <p>جميع الميمز تمت مراجعتها!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // بيانات الاعتماد الثابتة (كلمة المرور مُغيَّرة وإخفاء البيانات)
+        const ADMIN_CREDENTIALS = {
+            username: '123',
+            password: 'omarmeme'   // ✅ تم تغييرها إلى omarmeme
+        };
+
+        // === قائمة الميمز الجديدة (جميعها معتمدة) ===
+        const imagesList = [
+            { id: 1, src: "timps/meme1.jpg" },
+            { id: 2, src: "https://p16-comment-sign-sg.tiktokcdn.com/tos-alisg-i-zt8igodiya-sg/2869fb2207c44a1eb7420aefadbc15d7~tplv-jj85edgx6n-image-origin.jpeg?dr=8569&refresh_token=762e42db&x-expires=1793361600&x-signature=J0418rGsm5PoKAMzPwAvWlCiA4U%3D&t=67a6c45e&ps=a0626fcd&shp=ff37627b&shcp=ff37627b&idc=my" },
+            { id: 3, src: "https://p19-comment-sign-sg.tiktokcdn.com/tos-alisg-i-zt8igodiya-sg/9e5a1e5dcd3a4404bbfa7ba9e08dcc3f~tplv-jj85edgx6n-image-origin.jpeg?dr=8569&refresh_token=a0be9e3a&x-expires=1793361600&x-signature=YMtZhsa9fDnVfKlNUvTTQX9xkJA%3D&t=67a6c45e&ps=a0626fcd&shp=ff37627b&shcp=ff37627b&idc=my" },
+            { id: 4, src: "https://p19-comment-sign-va.tiktokcdn.com/tos-maliva-i-jj85edgx6n-us/48af254019024563a3f0c33372e5d4ec~tplv-jj85edgx6n-image-origin.jpeg?dr=8569&refresh_token=bfbdeb7a&x-expires=1793361600&x-signature=Bi%2FIUsE8cHlP5JDT2mw3sqK8QOw%3D&t=67a6c45e&ps=a0626fcd&shp=ff37627b&shcp=ff37627b&idc=my" },
+            { id: 5, src: "https://p19-comment-sign-va.tiktokcdn.com/tos-maliva-i-jj85edgx6n-us/9b69121453dd4278ab310eee19f49426~tplv-jj85edgx6n-image-origin.jpeg?dr=8569&refresh_token=2e716b48&x-expires=1793361600&x-signature=zGUhzR%2B3%2F2BPpC0XfMf1Fu4seOg%3D&t=67a6c45e&ps=a0626fcd&shp=ff37627b&shcp=ff37627b&idc=my" },
+            { id: 6, src: "https://p16-comment-sign-sg.tiktokcdn.com/tos-alisg-i-zt8igodiya-sg/b21e7c94705547e78b2d531d097a266f~tplv-jj85edgx6n-image-origin.jpeg?dr=8569&refresh_token=7c8fae60&x-expires=1793361600&x-signature=w53ogfgwL9XjCVZDD5DHOjjShHk%3D&t=67a6c45e&ps=a0626fcd&shp=ff37627b&shcp=ff37627b&idc=my" },
+            { id: 7, src: "https://p16-comment-sign-sg.tiktokcdn.com/tos-alisg-i-zt8igodiya-sg/cacf44f916fb4f13a17cbf1de675bfb6~tplv-jj85edgx6n-image-origin.jpeg?dr=8569&refresh_token=c7743461&x-expires=1793361600&x-signature=DG6HbqjlkDhNhngp%2BPfZcgkm520%3D&t=67a6c45e&ps=a0626fcd&shp=ff37627b&shcp=ff37627b&idc=my" },
+            { id: 8, src: "https://p19-comment-sign-sg.tiktokcdn.com/tos-alisg-i-zt8igodiya-sg/87d839e6112d43ce8416acafdd2bdf3c~tplv-jj85edgx6n-image-origin.jpeg?dr=8569&refresh_token=3ff9b81e&x-expires=1793361600&x-signature=X7u40mbY9gouPMKLdSXfgsSrwss%3D&t=67a6c45e&ps=a0626fcd&shp=ff37627b&shcp=ff37627b&idc=my" },
+            { id: 9, src: "https://p16-comment-sign-va.tiktokcdn.com/tos-maliva-i-jj85edgx6n-us/c4dba327ba214c71bf7c8fa7682949c8~tplv-jj85edgx6n-image-origin.jpeg?dr=8569&refresh_token=6cd45568&x-expires=1793444400&x-signature=ByG236AurG03ASMIhiV5371QIk0%3D&t=67a6c45e&ps=a0626fcd&shp=ff37627b&shcp=ff37627b&idc=my" },
+            { id: 10, src: "https://p19-comment-sign-va.tiktokcdn.com/tos-maliva-i-jj85edgx6n-us/44dae4fd18e141969cbd843a72ab885c~tplv-jj85edgx6n-image-origin.jpeg?dr=8569&refresh_token=4210e087&x-expires=1793361600&x-signature=JSkgPSp9uxFwNmzKx0lWVRwbKX4%3D&t=67a6c45e&ps=a0626fcd&shp=ff37627b&shcp=ff37627b&idc=my" },
+            { id: 11, src: "https://p19-comment-sign-sg.tiktokcdn.com/tos-alisg-i-zt8igodiya-sg/6b9caa55759e432898406e064c2ddb80~tplv-jj85edgx6n-image-origin.jpeg?dr=8569&refresh_token=c7e8a5c4&x-expires=1793361600&x-signature=YROKONpP%2Fq9UJw8Cpsfj9v8odIM%3D&t=67a6c45e&ps=a0626fcd&shp=ff37627b&shcp=ff37627b&idc=my" },
+            { id: 12, src: "https://p16-comment-sign-sg.tiktokcdn.com/tos-alisg-i-zt8igodiya-sg/4fd4966775e84597982ce88ba6a481b8~tplv-jj85edgx6n-image-origin.jpeg?dr=8569&refresh_token=1c85b1e0&x-expires=1793361600&x-signature=WMrJ7R6xQ7Ah3OQcPFBMXEArj88%3D&t=67a6c45e&ps=a0626fcd&shp=ff37627b&shcp=ff37627b&idc=my" },
+            { id: 13, src: "https://p16-comment-sign-va.tiktokcdn.com/tos-maliva-i-jj85edgx6n-us/c32e88e5398f49bf9b2f3cfa497dfaa8~tplv-jj85edgx6n-image-origin.jpeg?dr=8569&refresh_token=d643710b&x-expires=1793444400&x-signature=bsCXyhTi4TAp4Dr0vWEKT9uBDiI%3D&t=67a6c45e&ps=a0626fcd&shp=ff37627b&shcp=ff37627b&idc=my" },
+            { id: 14, src: "https://p16-comment-sign-sg.tiktokcdn.com/tos-alisg-i-zt8igodiya-sg/b6284cc1f4304dd0ba80ba54b9363445~tplv-jj85edgx6n-image-origin.jpeg?dr=8569&refresh_token=8dc48e5f&x-expires=1793444400&x-signature=MmAUomQ0q5xFr%2B1nve%2B8geICfxE%3D&t=67a6c45e&ps=a0626fcd&shp=ff37627b&shcp=ff37627b&idc=my" },
+            { id: 15, src: "timps/meme2.jpg" },
+            { id: 16, src: "timps/meme3.jpg" },
+            { id: 17, src: "timps/meme4.jpg" },
+            { id: 18, src: "timps/meme5.jpg" },
+            { id: 19, src: "timps/meme6.jpg" },
+            { id: 20, src: "timps/meme7.jpg" },
+            { id: 21, src: "timps/meme8.jpg" },
+            { id: 22, src: "timps/meme9.jpg" },
+            { id: 23, src: "timps/meme10.jpg" },
+            { id: 24, src: "timps/meme11.jpg" },
+            { id: 25, src: "timps/meme12.jpg" },
+            { id: 26, src: "timps/meme13.jpg" },
+            { id: 27, src: "timps/meme14.jpg" },
+            { id: 28, src: "timps/meme15.jpg" },
+            { id: 29, src: "timps/meme16.jpg" },
+            { id: 30, src: "timps/meme17.jpg" },
+            { id: 31, src: "timps/meme18.jpg" },
+            { id: 32, src: "timps/meme19.jpg" },
+            { id: 33, src: "timps/meme20.jpg" },
+            { id: 34, src: "timps/meme21.jpg" },
+            { id: 35, src: "timps/meme22.jpg" },
+            { id: 36, src: "timps/meme23.jpg" },
+            { id: 37, src: "timps/meme24.jpg" },
+            { id: 38, src: "timps/meme25.jpg" },
+            { id: 39, src: "timps/meme26.jpg" },
+            { id: 40, src: "timps/meme27.jpg" },
+            { id: 41, src: "timps/meme28.jpg" },
+            { id: 42, src: "timps/meme29.jpg" },
+            { id: 43, src: "timps/meme30.jpg" },
+            { id: 44, src: "timps/meme31.jpg" },
+            { id: 45, src: "timps/meme32.jpg" },
+            { id: 46, src: "timps/meme33.jpg" },
+            { id: 47, src: "timps/meme34.jpg" },
+            { id: 48, src: "timps/meme35.jpg" },
+            { id: 49, src: "timps/meme36.jpg" },
+            { id: 50, src: "timps/meme37.jpg" },
+            { id: 51, src: "timps/meme38.jpg" },
+            { id: 52, src: "timps/meme39.jpg" },
+            { id: 53, src: "timps/meme40.jpg" },
+            { id: 54, src: "timps/meme41.jpg" },
+            { id: 55, src: "timps/meme42.jpg" },
+            { id: 56, src: "timps/meme43.jpg" },
+            { id: 57, src: "timps/meme44.jpg" },
+            { id: 58, src: "timps/meme45.jpg" },
+            { id: 59, src: "timps/meme46.jpg" },
+            { id: 60, src: "timps/meme47.jpg" },
+            { id: 61, src: "timps/meme48.jpg" },
+            { id: 62, src: "timps/meme49.jpg" },
+            { id: 63, src: "timps/meme50.jpg" },
+            { id: 64, src: "timps/meme51.jpg" },
+            { id: 65, src: "timps/meme52.jpg" },
+            { id: 66, src: "timps/meme53.jpg" },
+            { id: 67, src: "timps/meme54.jpg" },
+            { id: 68, src: "timps/meme55.jpg" },
+            { id: 69, src: "timps/meme56.jpg" },
+            { id: 70, src: "timps/meme57.jpg" },
+            { id: 71, src: "timps/meme58.jpg" },
+            { id: 72, src: "timps/meme59.jpg" },
+            { id: 73, src: "timps/meme60.jpg" },
+            { id: 74, src: "timps/meme61.jpg" },
+            { id: 75, src: "timps/meme62.jpg" },
+            { id: 76, src: "timps/meme63.jpg" },
+            { id: 77, src: "timps/meme64.jpg" },
+            { id: 78, src: "timps/meme65.jpg" },
+            { id: 79, src: "timps/meme66.jpg" },
+            { id: 80, src: "timps/meme67.jpg" },
+            { id: 81, src: "timps/meme68.jpg" },
+            { id: 82, src: "timps/meme69.jpg" },
+            { id: 83, src: "timps/meme70.jpg" },
+            { id: 84, src: "timps/meme71.jpg" },
+            { id: 85, src: "timps/meme72.jpg" },
+            { id: 86, src: "timps/meme73.jpg" },
+            { id: 87, src: "timps/meme74.jpg" },
+            { id: 88, src: "timps/meme75.jpg" },
+            { id: 89, src: "timps/meme76.jpg" },
+            { id: 90, src: "timps/meme77.jpg" },
+            { id: 91, src: "timps/meme78.jpg" },
+            { id: 92, src: "timps/meme79.jpg" },
+            { id: 93, src: "timps/meme80.jpg" },
+            { id: 94, src: "timps/meme81.jpg" },
+            { id: 95, src: "timps/meme82.jpg" },
+            { id: 96, src: "timps/meme83.jpg" },
+            { id: 97, src: "timps/meme84.jpg" },
+            { id: 98, src: "timps/meme85.jpg" },
+            { id: 99, src: "timps/meme86.jpg" },
+            { id: 100, src: "timps/meme87.jpg" },
+            { id: 101, src: "timps/meme88.jpg" },
+            { id: 102, src: "timps/meme89.jpg" },
+            { id: 103, src: "timps/meme90.jpg" },
+            { id: 104, src: "timps/meme91.jpg" },
+            { id: 105, src: "timps/meme92.jpg" },
+            { id: 106, src: "timps/meme93.jpg" },
+            { id: 107, src: "timps/meme94.jpg" },
+            { id: 108, src: "timps/meme95.jpg" },
+            { id: 109, src: "timps/meme96.jpg" },
+            { id: 110, src: "timps/meme97.jpg" },
+            { id: 111, src: "timps/meme98.jpg" },
+            { id: 112, src: "timps/meme99.jpg" },
+            { id: 113, src: "timps/meme100.jpg" },
+            { id: 114, src: "timps/meme101.jpg" },
+            { id: 115, src: "timps/meme102.jpg" },
+            { id: 116, src: "timps/meme103.jpg" },
+            { id: 117, src: "timps/meme104.jpg" },
+            { id: 118, src: "timps/meme105.jpg" },
+            { id: 119, src: "timps/meme106.jpg" },
+            { id: 120, src: "timps/meme107.jpg" },
+            { id: 121, src: "timps/meme108.jpg" },
+            { id: 122, src: "timps/meme109.jpg" },
+            { id: 123, src: "timps/meme110.jpg" },
+            { id: 124, src: "timps/meme111.jpg" },
+            { id: 125, src: "timps/meme112.jpg" },
+            { id: 126, src: "timps/meme113.jpg" },
+            { id: 127, src: "timps/meme114.jpg" },
+            { id: 128, src: "timps/meme115.jpg" },
+            { id: 129, src: "timps/meme116.jpg" },
+            { id: 130, src: "timps/meme117.jpg" },
+            { id: 131, src: "timps/meme118.jpg" },
+            { id: 132, src: "timps/meme119.jpg" },
+            { id: 133, src: "timps/meme120.jpg" },
+            { id: 134, src: "timps/meme121.jpg" },
+            { id: 135, src: "timps/meme122.jpg" },
+            { id: 136, src: "timps/meme123.jpg" },
+            { id: 137, src: "timps/meme124.jpg" },
+            { id: 138, src: "timps/meme125.jpg" },
+            { id: 139, src: "timps/meme126.jpg" },
+            { id: 140, src: "timps/meme127.jpg" },
+            { id: 141, src: "timps/meme128.jpg" },
+            { id: 142, src: "timps/meme129.jpg" },
+            { id: 143, src: "timps/meme130.jpg" },
+            { id: 144, src: "timps/meme131.jpg" },
+            { id: 145, src: "timps/meme132.jpg" },
+            { id: 146, src: "timps/meme133.jpg" },
+            { id: 147, src: "timps/meme134.jpg" },
+            { id: 148, src: "timps/meme135.jpg" },
+            { id: 149, src: "timps/meme136.jpg" },
+            { id: 150, src: "timps/meme137.jpg" },
+            { id: 151, src: "timps/meme138.jpg" },
+            { id: 152, src: "timps/meme139.jpg" },
+            { id: 153, src: "timps/meme140.jpg" },
+            { id: 154, src: "timps/meme141.jpg" },
+            { id: 155, src: "timps/meme142.jpg" },
+            { id: 156, src: "timps/meme143.jpg" },
+            { id: 157, src: "timps/meme144.jpg" },
+            { id: 158, src: "timps/meme145.jpg" },
+            { id: 159, src: "timps/meme146.jpg" },
+            { id: 160, src: "timps/meme147.jpg" },
+            { id: 161, src: "timps/meme148.jpg" },
+            { id: 162, src: "timps/meme149.jpg" }
+        ];
+
+        // === بيانات الميمز (تم استبدالها بالقائمة الجديدة) ===
+        let memeData = imagesList.map(img => ({
+            id: img.id,
+            src: img.src,
+            status: 'approved',   // ✅ جميعها معتمدة
+            uploadDate: new Date().toISOString()
+        }));
+
+        let nextId = memeData.length + 1;
+        let isLoggedIn = false;
+
+        // ✅ إدارة الوضع الليلي (بدون تغيير)
+        function initTheme() {
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            if (prefersDark) {
+                document.body.classList.add('dark-mode');
+                document.getElementById('themeToggle').innerHTML = '☀️';
+            }
+        }
+
+        function toggleTheme() {
+            document.body.classList.toggle('dark-mode');
+            const isDark = document.body.classList.contains('dark-mode');
+            document.getElementById('themeToggle').innerHTML = isDark ? '☀️' : '🌙';
+        }
+
+        // التنقل بين الصفحات
+        function showPage(page) {
+            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+            document.querySelectorAll('.nav-button').forEach(b => b.classList.remove('active'));
+            
+            document.getElementById(`${page}-page`).classList.add('active');
+            
+            if (page === 'memes') {
+                document.getElementById('memesTabBtn').classList.add('active');
+                renderApprovedMemes();
+            } else if (page === 'admin') {
+                document.getElementById('adminTabBtn').classList.add('active');
+                if (!isLoggedIn) {
+                    document.getElementById('loginSection').style.display = 'block';
+                    document.getElementById('adminDashboard').style.display = 'none';
+                } else {
+                    document.getElementById('loginSection').style.display = 'none';
+                    document.getElementById('adminDashboard').style.display = 'block';
+                    renderPendingMemes();
+                    updateStats();
+                }
+            }
+        }
+
+        // رفع الصور (بدون تغيير)
+        function handleImageUpload(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+
+            if (!file.type.startsWith('image/')) {
+                showMessage('error', '❌ يرجى اختيار صورة فقط');
+                return;
+            }
+
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                document.getElementById('previewImage').src = e.target.result;
+                document.getElementById('previewContainer').style.display = 'block';
+                
+                const newMeme = {
+                    id: nextId++,
+                    src: e.target.result,
+                    status: 'pending',
+                    uploadDate: new Date().toISOString()
+                };
+                memeData.push(newMeme);
+                
+                document.getElementById('confirmationMessage').style.display = 'block';
+                showMessage('success', '✅ تم رفع الصورة بنجاح!');
+                
+                setTimeout(() => {
+                    document.getElementById('previewContainer').style.display = 'none';
+                    document.getElementById('confirmationMessage').style.display = 'none';
+                }, 4000);
+            };
+            reader.readAsDataURL(file);
+            event.target.value = '';
+        }
+
+        // عرض الميمز المعتمدة
+        function renderApprovedMemes() {
+            const container = document.getElementById('approvedGallery');
+            const emptyState = document.getElementById('emptyApproved');
+            const approved = memeData.filter(m => m.status === 'approved');
+            
+            container.innerHTML = '';
+            
+            if (approved.length === 0) {
+                emptyState.style.display = 'block';
+                return;
+            }
+            
+            emptyState.style.display = 'none';
+            
+            approved.forEach((meme, index) => {
+                const card = createMemeCard(meme, false, index);
+                container.appendChild(card);
+            });
+        }
+
+        // عرض الميمز بانتظار المراجعة
+        function renderPendingMemes() {
+            const container = document.getElementById('pendingGallery');
+            const emptyState = document.getElementById('emptyPending');
+            const pending = memeData.filter(m => m.status === 'pending');
+            
+            container.innerHTML = '';
+            
+            if (pending.length === 0) {
+                emptyState.style.display = 'block';
+                return;
+            }
+            
+            emptyState.style.display = 'none';
+            
+            pending.forEach((meme, index) => {
+                const card = createMemeCard(meme, true, index);
+                container.appendChild(card);
+            });
+        }
+
+        // إنشاء بطاقة ميمز (بدون تغيير)
+        function createMemeCard(meme, isAdmin, index) {
+            const card = document.createElement('div');
+            card.className = 'image-card';
+            card.style.animationDelay = `${index * 0.1}s`;
+            
+            const badge = isAdmin ? 
+                `<div class="status-badge-overlay status-pending">⏳ بانتظار</div>` : 
+                `<div class="status-badge-overlay status-approved">✅ معتمد</div>`;
+            
+            let buttons;
+            if (isAdmin) {
+                buttons = `
+                    <button class="admin-btn approve-btn" onclick="approveMeme(${meme.id})">
+                        ✅ اعتماد
+                    </button>
+                    <button class="admin-btn reject-btn" onclick="rejectMeme(${meme.id})">
+                        ❌ رفض
+                    </button>
+                `;
+            } else {
+                buttons = `
+                    <button class="download-button" onclick="downloadMeme(${meme.id}, this)">
+                        <span class="icon">⬇️</span>
+                        <span>تحميل</span>
+                    </button>
+                `;
+            }
+            
+            card.innerHTML = `
+                <div class="image-container">
+                    ${badge}
+                    <img src="${meme.src}" alt="ميمز ${meme.id}" loading="lazy">
+                </div>
+                <div class="button-container">
+                    ${buttons}
+                </div>
+            `;
+            
+            return card;
+        }
+
+        // تحميل الميمز (بدون تغيير)
+        async function downloadMeme(id, btn) {
+            const meme = memeData.find(m => m.id === id);
+            if (!meme) return;
+            
+            btn.disabled = true;
+            const originalText = btn.innerHTML;
+            btn.innerHTML = '<span class="icon">⏳</span> <span>جاري...</span>';
+            
+            try {
+                await new Promise(r => setTimeout(r, 800));
+                
+                const link = document.createElement('a');
+                link.href = meme.src;
+                link.download = `7lbsaa-meme-${id}.jpg`;
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                
+                showMessage('success', '✅ تم تحميل الصورة بنجاح!');
+            } catch (err) {
+                showMessage('error', '❌ فشل في تحميل الصورة');
+            } finally {
+                btn.disabled = false;
+                btn.innerHTML = originalText;
+            }
+        }
+
+        // اعتماد الميمز
+        function approveMeme(id) {
+            const meme = memeData.find(m => m.id === id);
+            if (meme) {
+                meme.status = 'approved';
+                renderPendingMemes();
+                updateStats();
+                showMessage('success', '✅ تم اعتماد الميمز بنجاح!');
+            }
+        }
+
+        // رفض الميمز
+        function rejectMeme(id) {
+            const index = memeData.findIndex(m => m.id === id);
+            if (index > -1) {
+                memeData.splice(index, 1);
+                renderPendingMemes();
+                updateStats();
+                showMessage('success', '✅ تم رفض الميمز');
+            }
+        }
+
+        // تحديث الإحصائيات (بدون تغيير)
+        function updateStats() {
+            const pending = memeData.filter(m => m.status === 'pending').length;
+            const approved = memeData.filter(m => m.status === 'approved').length;
+            
+            document.getElementById('pendingCount').textContent = pending;
+            document.getElementById('approvedCount').textContent = approved;
+            document.getElementById('totalCount').textContent = memeData.length;
+        }
+
+        // ✅ تسجيل الدخول (تم تغيير كلمة المرور وإخفاء البيانات)
+        function handleLogin() {
+            const username = document.getElementById('username').value.trim();
+            const password = document.getElementById('password').value;
+            
+            if (username === ADMIN_CREDENTIALS.username && password === ADMIN_CREDENTIALS.password) {
+                isLoggedIn = true;
+                document.getElementById('loginSection').style.display = 'none';
+                document.getElementById('adminDashboard').style.display = 'block';
+                renderPendingMemes();
+                updateStats();
+                showMessage('success', '✅ مرحباً بك في لوحة التحكم!');
+                
+                document.getElementById('username').value = '';
+                document.getElementById('password').value = '';
+            } else {
+                showMessage('error', '❌ بيانات الدخول غير صحيحة');
+            }
+        }
+
+        // تسجيل الخروج
+        function handleLogout() {
+            isLoggedIn = false;
+            showPage('memes');
+            showMessage('success', '✅ تم تسجيل الخروج');
+        }
+
+        // عرض الرسائل (بدون تغيير)
+        function showMessage(type, text) {
+            const msg = document.getElementById(type === 'success' ? 'successMsg' : 'errorMsg');
+            msg.textContent = text;
+            msg.classList.add('show');
+            
+            setTimeout(() => {
+                msg.classList.remove('show');
+            }, 3000);
+        }
+
+        // تشغيل التطبيق
+        document.addEventListener('DOMContentLoaded', function() {
+            initTheme();
+            renderApprovedMemes();
+            
+            document.getElementById('password').addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') handleLogin();
+            });
+        });
+
+        // ⚠️ تم إلغاء الإضافة التلقائية للميمز التجريبي
+    </script>
+</body>
+</html>
