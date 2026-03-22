@@ -8,146 +8,669 @@
     <title>موقع حلبسة | 7lbsaa - المنصة الرسمية للتمبات والميمز</title>
     <link rel="shortcut icon" type="image/jpg" href="logox.jpg">
 
-    <!-- SEO -->
-    <meta name="description" content="موقع حلبسة (7lbsaa): المنصة الرسمية لأقوى تمبات وميمز، صور ضحك، ومحتوى ثانوية عامة.">
-    <meta name="keywords" content="7lbsaa, 7lbsaa1, موقع حلبسة, منصة حلبسة, صفحة حلبسة, حلبسة ميمز">
+    <!-- SEO: الوصف والكلمات المفتاحية -->
+    <meta name="description" content="موقع حلبسة (7lbsaa): المنصة الرسمية لأقوى تمبات وميمز، صور ضحك، ومحتوى ثانوية عامة. تصفح مكتبة حلبسة للصور بجودة عالية." />
+    <meta name="keywords" content="7lbsaa, 7lbsaa1, موقع حلبسة, منصة حلبسة, صفحة حلبسة, حلبسة ميمز, حلبسة تمبات, حلبسة صور, حلبسة ضحك, حلبسة الرسمية">
     <link rel="canonical" href="https://7lbsaa1.github.io/7lbsaa.memes/" />
 
-    <!-- Open Graph -->
+    <!-- Social Media: فيسبوك وواتساب -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://7lbsaa1.github.io/7lbsaa/" />
-    <meta property="og:title" content="موقع حلبسة | 7lbsaa" />
+    <meta property="og:title" content="موقع حلبسة | 7lbsaa - صور وميمز وتمبات" />
     <meta property="og:description" content="موقع حلبسة (7lbsaa): تمبات، صور ضحك، وميمز ثانوية عامة." />
     <meta property="og:image" content="https://7lbsaa1.github.io/7lbsaa/logox1.jpg" />
 
-    <!-- Twitter -->
+    <!-- Twitter: تويتر -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="موقع حلبسة | 7lbsaa" />
     <meta name="twitter:description" content="موقع حلبسة (7lbsaa): تمبات، صور ضحك، وميمز ثانوية عامة." />
     <meta name="twitter:image" content="https://7lbsaa1.github.io/7lbsaa/logox1.jpg" />
     
     <style>
-        /* (لم يتغير - يبقى كما هو) */
-        :root{--bg-color:#4a7fa7;--bg-color-2:#1a3d63;--text-color:white;--card-bg:white;--shadow-color:rgba(61,45,133,.3);--button-bg:linear-gradient(135deg,#2549e7 0%,#764ba2);--button-hover:rgba(102,126,234,.4);--message-success:#4caf50;--message-error:#ce2d21;--admin-color:#9c27b0;--pending-color:#ff9800;--approved-color:#4caf50;}
-        .dark-mode{--bg-color:#242f49;--bg-color-2:#11212d;--text-color:#e0e0e0;--card-bg:#0d101c;--shadow-color:rgba(0,0,0,.5);--button-bg:linear-gradient(135deg,#4a4a8a 0%,#6a4c93);--button-hover:rgba(102,126,234,.6);--message-success:#3a7d44;--message-error:#9e1616;--admin-color:#7b1fa2;--pending-color:#f57c00;--approved-color:#388e3c;}
+        :root {
+            --bg-color: #4a7fa7;
+            --bg-color-2: #1a3d63;
+            --text-color: white;
+            --card-bg: white;
+            --shadow-color: rgba(61, 45, 133, 0.3);
+            --button-bg: linear-gradient(135deg, #2549e7 0%, #764ba2 100%);
+            --button-hover: rgba(102, 126, 234, 0.4);
+            --message-success: #4caf50;
+            --message-error: #ce2d21;
+            --admin-color: #9c27b0;
+            --pending-color: #ff9800;
+            --approved-color: #4caf50;
+        }
 
-        *{margin:0;padding:0;box-sizing:border-box;transition:background-color .3s,color .3s;}
-        body{font-family:'Segoe UI',Tahoma,Geneva,verdana,sans-serif;background:linear-gradient(135deg,var(--bg-color) 0%,var(--bg-color-2));min-height:100vh;padding:20px;color:var(--text-color);}
-        .container{max-width:1200px;margin:auto;}
+        .dark-mode {
+            --bg-color: #242f49;
+            --bg-color-2: #11212d;
+            --text-color: #e0e0e0;
+            --card-bg: #0d101c;
+            --shadow-color: rgba(0, 0, 0, 0.5);
+            --button-bg: linear-gradient(135deg, #4a4a8a 0%, #6a4c93 100%);
+            --button-hover: rgba(102, 126, 234, 0.6);
+            --message-success: #3a7d44;
+            --message-error: #9e1616;
+            --admin-color: #7b1fa2;
+            --pending-color: #f57c00;
+            --approved-color: #388e3c;
+        }
 
-        /* شريط التنقل */
-        .top-bar{display:flex;justify-content:space-between;align-items:center;margin-bottom:25px;padding:15px 20px;background:rgba(255,255,255,.08);border-radius:15px;backdrop-filter:blur(10px);flex-wrap:wrap;gap:15px;}
-        .brand{font-size:1.5em;font-weight:bold;}
-        .nav-controls{display:flex;gap:10px;align-items:center;flex-wrap:wrap;}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
 
-        .nav-tabs{display:flex;justify-content:center;gap:15px;margin-bottom:30px;flex-wrap:wrap;}
-        .nav-button{padding:12px 25px;background:var(--card-bg);color:var(--text-color);border:none;border-radius:50px;font-size:1rem;font-weight:600;cursor:pointer;transition:all .3s;display:flex;align-items:center;gap:8px;box-shadow:0 5px 15px var(--shadow-color);}
-        .nav-button:hover{transform:translateY(-3px);box-shadow:0 8px 20px var(--shadow-color);}
-        .nav-button.active{background:var(--button-bg);color:#fff;}
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, var(--bg-color) 0%, var(--bg-color-2)) 100%;
+            min-height: 100vh;
+            padding: 20px;
+            color: var(--text-color);
+        }
 
-        .theme-toggle{background:var(--card-bg);color:var(--text-color);border:none;border-radius:50%;width:45px;height:45px;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 3px 10px var(--shadow-color);transition:all .3s;font-size:1.2em;}
-        .theme-toggle:hover{transform:scale(1.1) rotate(15deg);}
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
 
-        .page{display:none;animation:fadeIn .5s ease-out;}
-        .page.active{display:block;}
-        @keyframes fadeIn{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
+        /* شريط التنقل العلوي */
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            padding: 15px 20px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            flex-wrap: wrap;
+            gap: 15px;
+        }
 
-        /* الهيدر */
-        .header{text-align:center;margin-bottom:40px;animation:slideDown .6s ease-out;}
-        .header h1{font-size:2.5em;margin-bottom:10px;text-shadow:2px 2px 4px rgba(0,0,0,.3);}
-        .header p{font-size:1.1em;opacity:.9;}
-        @keyframes slideDown{from{opacity:0;transform:translateY(-30px);}to{opacity:1;transform:translateY(0);}}
+        .brand {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: var(--text-color);
+        }
 
-        /* قسم الرفع */
-        .upload-section{background:rgba(255,255,255,.05);border-radius:20px;padding:30px;margin-bottom:30px;text-align:center;border:2px dashed rgba(0,219,222,.4);}
-        .upload-btn{display:inline-flex;align-items:center;gap:10px;padding:16px 32px;background:var(--button-bg);color:#fff;border:none;border-radius:50px;font-size:1.1rem;font-weight:600;cursor:pointer;transition:transform .3s,box-shadow .3s;margin:20px 0;}
-        .upload-btn:hover{transform:scale(1.05);box-shadow:0 6px 20px var(--button-hover);}
-        .upload-btn:active{transform:scale(.98);}
-        #fileInput{display:none;}
-        .preview-container{max-width:300px;margin:20px auto;display:none;}
-        .preview-image{width:100%;border-radius:12px;box-shadow:0 8px 25px rgba(0,0,0,.3);}
-        .confirmation-message{background:rgba(76,175,80,.15);border:1px solid rgba(76,175,80,.3);border-radius:12px;padding:20px;margin-top:20px;display:none;animation:slideIn .5s ease;}
-        .confirmation-message h3{color:var(--approved-color);margin-bottom:10px;}
-        @keyframes slideIn{from{opacity:0;transform:translateY(-10px);}to{opacity:1;transform:translateY(0);}}
+        .nav-controls {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
 
-        /* المعرض */
-        .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:30px;padding:20px;}
-        .image-card{background:var(--card-bg);border-radius:15px;overflow:hidden;box-shadow:0 10px 30px var(--shadow-color);transition:all .3s;animation:fadeIn .6s ease-out;opacity:0;position:relative;}
-        .image-card:nth-child(1){animation-delay:.1s}.image-card:nth-child(2){animation-delay:.2s}.image-card:nth-child(3){animation-delay:.3s}.image-card:nth-child(4){animation-delay:.4s}.image-card:nth-child(5){animation-delay:.5s}.image-card:nth-child(6){animation-delay:.6s}
-        .image-card:hover{transform:translateY(-10px);box-shadow:0 20px 40px var(--shadow-color);}
-        .image-container{width:100%;height:350px;overflow:hidden;background:#f0f0f0;position:relative;}
-        .dark-mode .image-container{background:#1a1a2e;}
-        .image-container img{width:100%;height:100%;object-fit:cover;transition:transform .3s;}
-        .image-card:hover .image-container img{transform:scale(1.05);}
-        .status-badge-overlay{position:absolute;top:15px;left:15px;padding:6px 14px;border-radius:20px;font-size:.85rem;font-weight:600;color:#fff;z-index:10;}
-        .status-pending{background:var(--pending-color);}
-        .status-approved{background:var(--approved-color);}
+        /* التنقل بين الصفحات */
+        .nav-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
 
-        .button-container{padding:15px;display:flex;justify-content:center;gap:10px;flex-wrap:wrap;}
-        .download-button{padding:12px 30px;background:var(--button-bg);color:#fff;border:none;border-radius:8px;font-size:1em;font-weight:600;cursor:pointer;transition:all .3s;display:flex;align-items:center;justify-content:center;gap:8px;min-width:150px;}
-        .download-button:hover{transform:scale(1.05);box-shadow:0 5px 15px var(--button-hover);}
-        .download-button:active{transform:scale(.98);}
-        .download-button.loading{opacity:.7;cursor:not-allowed;}
-        .icon{font-size:1.2em;}
+        .nav-button {
+            padding: 12px 25px;
+            background: var(--card-bg);
+            color: var(--text-color);
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 5px 15px var(--shadow-color);
+        }
+
+        .nav-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px var(--shadow-color);
+        }
+
+        .nav-button.active {
+            background: var(--button-bg);
+            color: white;
+        }
+
+        .theme-toggle {
+            background: var(--card-bg);
+            color: var(--text-color);
+            border: none;
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 3px 10px var(--shadow-color);
+            transition: all 0.3s ease;
+            font-size: 1.2em;
+        }
+
+        .theme-toggle:hover {
+            transform: scale(1.1) rotate(15deg);
+        }
+
+        .page {
+            display: none;
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* رأس الصفحة */
+        .header {
+            text-align: center;
+            color: var(--text-color);
+            margin-bottom: 40px;
+            animation: slideDown 0.6s ease-out;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* قسم رفع الصور */
+        .upload-section {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            text-align: center;
+            border: 2px dashed rgba(0, 219, 222, 0.4);
+        }
+
+        .upload-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 32px;
+            background: var(--button-bg);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin: 20px 0;
+        }
+
+        .upload-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px var(--button-hover);
+        }
+
+        .upload-btn:active {
+            transform: scale(0.98);
+        }
+
+        #fileInput {
+            display: none;
+        }
+
+        .preview-container {
+            max-width: 300px;
+            margin: 20px auto;
+            display: none;
+        }
+
+        .preview-image {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .confirmation-message {
+            background: rgba(76, 175, 80, 0.15);
+            border: 1px solid rgba(76, 175, 80, 0.3);
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 20px;
+            display: none;
+            animation: slideIn 0.5s ease;
+        }
+
+        .confirmation-message h3 {
+            color: var(--approved-color);
+            margin-bottom: 10px;
+        }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* معرض الصور */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 20px;
+        }
+
+        .image-card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px var(--shadow-color);
+            transition: all 0.3s ease;
+            animation: fadeIn 0.6s ease-out forwards;
+            opacity: 0;
+            position: relative;
+        }
+
+        .image-card:nth-child(1) { animation-delay: 0.1s; }
+        .image-card:nth-child(2) { animation-delay: 0.2s; }
+        .image-card:nth-child(3) { animation-delay: 0.3s; }
+        .image-card:nth-child(4) { animation-delay: 0.4s; }
+        .image-card:nth-child(5) { animation-delay: 0.5s; }
+        .image-card:nth-child(6) { animation-delay: 0.6s; }
+
+        .image-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px var(--shadow-color);
+        }
+
+        .image-container {
+            width: 100%;
+            height: 350px;
+            overflow: hidden;
+            background: #f0f0f0;
+            position: relative;
+        }
+
+        .dark-mode .image-container {
+            background: #1a1a2e;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .image-card:hover .image-container img {
+            transform: scale(1.05);
+        }
+
+        .status-badge-overlay {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: white;
+            z-index: 10;
+        }
+
+        .status-pending {
+            background: var(--pending-color);
+        }
+
+        .status-approved {
+            background: var(--approved-color);
+        }
+
+        .button-container {
+            padding: 15px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .download-button {
+            padding: 12px 30px;
+            background: var(--button-bg);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            min-width: 150px;
+        }
+
+        .download-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px var(--button-hover);
+        }
+
+        .download-button:active {
+            transform: scale(0.98);
+        }
+
+        .download-button.loading {
+            opacity: 0.7;
+            cursor: not-allowed;
+        }
+
+        .icon {
+            font-size: 1.2em;
+        }
 
         /* صفحة الإدارة */
-        .admin-section{background:rgba(255,255,255,.05);border-radius:20px;padding:30px;margin-bottom:30px;border:2px solid var(--admin-color);}
-        .login-form{max-width:400px;margin:0 auto;background:rgba(255,255,255,.05);border-radius:15px;padding:30px;border:1px solid rgba(255,255,255,.1);}
-        .login-form h2{text-align:center;margin-bottom:20px;}
-        .form-group{margin-bottom:25px;}
-        .form-group label{display:block;margin-bottom:8px;font-weight:600;}
-        .form-input{width:100%;padding:14px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);border-radius:10px;color:var(--text-color);font-size:1rem;transition:border-color .3s;}
-        .form-input:focus{outline:none;border-color:var(--admin-color);}
-        .login-btn{width:100%;padding:16px;background:var(--admin-color);color:#fff;border:none;border-radius:10px;font-size:1.1rem;font-weight:600;cursor:pointer;transition:transform .3s;}
-        .login-btn:hover{transform:scale(1.02);}
+        .admin-section {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            border: 2px solid var(--admin-color);
+        }
 
-        .admin-controls{display:flex;gap:15px;margin-top:20px;justify-content:center;flex-wrap:wrap;}
-        .admin-btn{padding:10px 24px;border:none;border-radius:8px;font-weight:600;cursor:pointer;transition:all .3s;min-width:120px;}
-        .approve-btn{background:var(--approved-color);color:#fff;}
-        .approve-btn:hover{background:#388e3c;transform:translateY(-2px);}
-        .reject-btn{background:var(--message-error);color:#fff;}
-        .reject-btn:hover{background:#b71c1c;transform:translateY(-2px);}
+        .login-form {
+            max-width: 400px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
 
-        .status-badge{display:inline-block;padding:5px 12px;border-radius:20px;font-size:.85rem;font-weight:600;margin-top:10px;}
-        .pending-badge{background:rgba(255,152,0,.2);color:var(--pending-color);}
-        .approved-badge{background:rgba(76,175,80,.2);color:var(--approved-color);}
+        .login-form h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: var(--text-color);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--text-color);
+            font-weight: 600;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 14px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            color: var(--text-color);
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--admin-color);
+        }
+
+        .login-btn {
+            width: 100%;
+            padding: 16px;
+            background: var(--admin-color);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .login-btn:hover {
+            transform: scale(1.02);
+        }
+
+        .admin-controls {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .admin-btn {
+            padding: 10px 24px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            min-width: 120px;
+        }
+
+        .approve-btn {
+            background: var(--approved-color);
+            color: white;
+        }
+
+        .approve-btn:hover {
+            background: #388e3c;
+            transform: translateY(-2px);
+        }
+
+        .reject-btn {
+            background: var(--message-error);
+            color: white;
+        }
+
+        .reject-btn:hover {
+            background: #b71c1c;
+            transform: translateY(-2px);
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+
+        .pending-badge {
+            background: rgba(255, 152, 0, 0.2);
+            color: var(--pending-color);
+        }
+
+        .approved-badge {
+            background: rgba(76, 175, 80, 0.2);
+            color: var(--approved-color);
+        }
 
         /* إحصائيات الإدارة */
-        .admin-stats{display:flex;justify-content:center;gap:30px;margin-bottom:30px;flex-wrap:wrap;}
-        .stat-card{background:rgba(255,255,255,.08);padding:20px 30px;border-radius:15px;text-align:center;min-width:150px;}
-        .stat-number{font-size:2em;font-weight:bold;color:var(--admin-color);}
-        .stat-label{font-size:.9em;opacity:.8;}
+        .admin-stats {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
 
-        .logout-btn{background:var(--message-error);color:#fff;padding:10px 20px;border:none;border-radius:8px;cursor:pointer;font-weight:600;transition:all .3s;}
-        .logout-btn:hover{background:#b71c1c;transform:translateY(-2px);}
+        .stat-card {
+            background: rgba(255, 255, 255, 0.08);
+            padding: 20px 30px;
+            border-radius: 15px;
+            text-align: center;
+            min-width: 150px;
+        }
+
+        .stat-number {
+            font-size: 2em;
+            font-weight: bold;
+            color: var(--admin-color);
+        }
+
+        .stat-label {
+            font-size: 0.9em;
+            opacity: 0.8;
+        }
+
+        .logout-btn {
+            background: var(--message-error);
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .logout-btn:hover {
+            background: #b71c1c;
+            transform: translateY(-2px);
+        }
 
         /* رسائل التنبيه */
-        .message{position:fixed;top:20px;left:50%;transform:translateX(-50%);padding:15px 30px;border-radius:10px;display:none;z-index:1000;animation:messageSlide .3s ease-out;box-shadow:0 5px 20px rgba(0,0,0,.3);color:#fff;text-align:center;font-weight:600;max-width:90%;}
-        .message.success{background:var(--message-success);}
-        .message.error{background:var(--message-error);}
-        .message.show{display:block;}
-        @keyframes messageSlide{from{transform:translateX(-50%) translateY(-100px);opacity:0;}to{transform:translateX(-50%) translateY(0);opacity:1;}}
+        .message {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 15px 30px;
+            border-radius: 10px;
+            display: none;
+            z-index: 1000;
+            animation: messageSlide 0.3s ease-out;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            color: white;
+            text-align: center;
+            font-weight: 600;
+            max-width: 90%;
+        }
+
+        .message.success {
+            background: var(--message-success);
+        }
+
+        .message.error {
+            background: var(--message-error);
+        }
+
+        .message.show {
+            display: block;
+        }
+
+        @keyframes messageSlide {
+            from {
+                transform: translateX(-50%) translateY(-100px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(-50%) translateY(0);
+                opacity: 1;
+            }
+        }
 
         /* حالة الفراغ */
-        .empty-state{text-align:center;padding:50px 20px;color:var(--text-color);opacity:.7;}
-        .empty-icon{font-size:4em;margin-bottom:15px;}
+        .empty-state {
+            text-align: center;
+            padding: 50px 20px;
+            color: var(--text-color);
+            opacity: 0.7;
+        }
+
+        .empty-icon {
+            font-size: 4em;
+            margin-bottom: 15px;
+        }
 
         /* التجاوب */
-        @media (max-width:768px){
-            .top-bar{flex-direction:column;text-align:center;}
-            .nav-controls{width:100%;justify-content:center;}
-            .header h1{font-size:2em;}
-            .gallery{grid-template-columns:1fr;gap:20px;padding:10px;}
-            .image-container{height:280px;}
-            .admin-stats{gap:15px;}
-            .stat-card{min-width:120px;padding:15px 20px;}
-            .login-form{padding:20px;}
+        @media (max-width: 768px) {
+            .top-bar {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .nav-controls {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .header h1 {
+                font-size: 2em;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                padding: 10px;
+            }
+
+            .image-container {
+                height: 280px;
+            }
+
+            .admin-stats {
+                gap: 15px;
+            }
+
+            .stat-card {
+                min-width: 120px;
+                padding: 15px 20px;
+            }
+
+            .login-form {
+                padding: 20px;
+            }
         }
-        @media (max-width:480px){
-            body{padding:10px;}
-            .header h1{font-size:1.7em;}
-            .nav-button{padding:10px 18px;font-size:.9rem;}
-            .image-container{height:250px;}
+
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+
+            .header h1 {
+                font-size: 1.7em;
+            }
+
+            .nav-button {
+                padding: 10px 18px;
+                font-size: 0.9rem;
+            }
+
+            .image-container {
+                height: 250px;
+            }
         }
     </style>
 </head>
@@ -182,6 +705,7 @@
             <div class="upload-section">
                 <h2>شارك ميمزك معنا! 🎉</h2>
                 <p>ارفع صورتك وهتظهر بعد مراجعة الإدارة</p>
+                
                 <button class="upload-btn" onclick="document.getElementById('fileInput').click()">
                     📤 رفع ميمز جديد
                 </button>
@@ -262,7 +786,9 @@
 
                 <h2 style="text-align: center; margin-bottom: 20px;">⏳ الميمز بانتظار المراجعة</h2>
                 
-                <div class="gallery" id="pendingGallery"></div>
+                <div class="gallery" id="pendingGallery">
+                    <!-- الميمز بانتظار المراجعة -->
+                </div>
 
                 <div class="empty-state" id="emptyPending" style="display: none;">
                     <div class="empty-icon">🎉</div>
@@ -274,15 +800,15 @@
     </div>
 
     <script>
-        // بيانات الاعتماد الثابتة (كلمة المرور مُغيَّرة وإخفاء البيانات)
+        // بيانات الاعتماد المشرف المعدلة
         const ADMIN_CREDENTIALS = {
             username: '123',
-            password: 'omarmeme'   // ✅ تم تغييرها إلى omarmeme
+            password: 'omarmeme'
         };
 
-        // === قائمة الميمز الجديدة (جميعها معتمدة) ===
+        // قائمة الصور التي قدمتها
         const imagesList = [
-            { id: 1, src: "timps/meme1.jpg" },
+            { id: 1, src: "timps/meme1 .jpg" },
             { id: 2, src: "https://p16-comment-sign-sg.tiktokcdn.com/tos-alisg-i-zt8igodiya-sg/2869fb2207c44a1eb7420aefadbc15d7~tplv-jj85edgx6n-image-origin.jpeg?dr=8569&refresh_token=762e42db&x-expires=1793361600&x-signature=J0418rGsm5PoKAMzPwAvWlCiA4U%3D&t=67a6c45e&ps=a0626fcd&shp=ff37627b&shcp=ff37627b&idc=my" },
             { id: 3, src: "https://p19-comment-sign-sg.tiktokcdn.com/tos-alisg-i-zt8igodiya-sg/9e5a1e5dcd3a4404bbfa7ba9e08dcc3f~tplv-jj85edgx6n-image-origin.jpeg?dr=8569&refresh_token=a0be9e3a&x-expires=1793361600&x-signature=YMtZhsa9fDnVfKlNUvTTQX9xkJA%3D&t=67a6c45e&ps=a0626fcd&shp=ff37627b&shcp=ff37627b&idc=my" },
             { id: 4, src: "https://p19-comment-sign-va.tiktokcdn.com/tos-maliva-i-jj85edgx6n-us/48af254019024563a3f0c33372e5d4ec~tplv-jj85edgx6n-image-origin.jpeg?dr=8569&refresh_token=bfbdeb7a&x-expires=1793361600&x-signature=Bi%2FIUsE8cHlP5JDT2mw3sqK8QOw%3D&t=67a6c45e&ps=a0626fcd&shp=ff37627b&shcp=ff37627b&idc=my" },
@@ -290,7 +816,7 @@
             { id: 6, src: "https://p16-comment-sign-sg.tiktokcdn.com/tos-alisg-i-zt8igodiya-sg/b21e7c94705547e78b2d531d097a266f~tplv-jj85edgx6n-image-origin.jpeg?dr=8569&refresh_token=7c8fae60&x-expires=1793361600&x-signature=w53ogfgwL9XjCVZDD5DHOjjShHk%3D&t=67a6c45e&ps=a0626fcd&shp=ff37627b&shcp=ff37627b&idc=my" },
             { id: 7, src: "https://p16-comment-sign-sg.tiktokcdn.com/tos-alisg-i-zt8igodiya-sg/cacf44f916fb4f13a17cbf1de675bfb6~tplv-jj85edgx6n-image-origin.jpeg?dr=8569&refresh_token=c7743461&x-expires=1793361600&x-signature=DG6HbqjlkDhNhngp%2BPfZcgkm520%3D&t=67a6c45e&ps=a0626fcd&shp=ff37627b&shcp=ff37627b&idc=my" },
             { id: 8, src: "https://p19-comment-sign-sg.tiktokcdn.com/tos-alisg-i-zt8igodiya-sg/87d839e6112d43ce8416acafdd2bdf3c~tplv-jj85edgx6n-image-origin.jpeg?dr=8569&refresh_token=3ff9b81e&x-expires=1793361600&x-signature=X7u40mbY9gouPMKLdSXfgsSrwss%3D&t=67a6c45e&ps=a0626fcd&shp=ff37627b&shcp=ff37627b&idc=my" },
-            { id: 9, src: "https://p16-comment-sign-va.tiktokcdn.com/tos-maliva-i-jj85edgx6n-us/c4dba327ba214c71bf7c8fa7682949c8~tplv-jj85edgx6n-image-origin.jpeg?dr=8569&refresh_token=6cd45568&x-expires=1793444400&x-signature=ByG236AurG03ASMIhiV5371QIk0%3D&t=67a6c45e&ps=a0626fcd&shp=ff37627b&shcp=ff37627b&idc=my" },
+            { id: 9, src: "https://p16-comment-sign-va.tiktokcdn.com/tos-maliva-i-jj85edgx6n-us/c4dba327ba214c71bf7c8fa7682949c8~tplv-jj85edgx6n-image-origin.jpeg?dr=8569&refresh_token=6cd45568&x-expires=1793361600&x-signature=ByG236AurG03ASMIhiV5371QIk0%3D&t=67a6c45e&ps=a0626fcd&shp=ff37627b&shcp=ff37627b&idc=my" },
             { id: 10, src: "https://p19-comment-sign-va.tiktokcdn.com/tos-maliva-i-jj85edgx6n-us/44dae4fd18e141969cbd843a72ab885c~tplv-jj85edgx6n-image-origin.jpeg?dr=8569&refresh_token=4210e087&x-expires=1793361600&x-signature=JSkgPSp9uxFwNmzKx0lWVRwbKX4%3D&t=67a6c45e&ps=a0626fcd&shp=ff37627b&shcp=ff37627b&idc=my" },
             { id: 11, src: "https://p19-comment-sign-sg.tiktokcdn.com/tos-alisg-i-zt8igodiya-sg/6b9caa55759e432898406e064c2ddb80~tplv-jj85edgx6n-image-origin.jpeg?dr=8569&refresh_token=c7e8a5c4&x-expires=1793361600&x-signature=YROKONpP%2Fq9UJw8Cpsfj9v8odIM%3D&t=67a6c45e&ps=a0626fcd&shp=ff37627b&shcp=ff37627b&idc=my" },
             { id: 12, src: "https://p16-comment-sign-sg.tiktokcdn.com/tos-alisg-i-zt8igodiya-sg/4fd4966775e84597982ce88ba6a481b8~tplv-jj85edgx6n-image-origin.jpeg?dr=8569&refresh_token=1c85b1e0&x-expires=1793361600&x-signature=WMrJ7R6xQ7Ah3OQcPFBMXEArj88%3D&t=67a6c45e&ps=a0626fcd&shp=ff37627b&shcp=ff37627b&idc=my" },
@@ -443,21 +969,21 @@
             { id: 159, src: "timps/meme146.jpg" },
             { id: 160, src: "timps/meme147.jpg" },
             { id: 161, src: "timps/meme148.jpg" },
-            { id: 162, src: "timps/meme149.jpg" }
+            { id: 162, src: "timps/meme149.jpg" },
         ];
 
-        // === بيانات الميمز (تم استبدالها بالقائمة الجديدة) ===
+        // تحويل القائمة إلى بيانات الميمز المعتمدة
         let memeData = imagesList.map(img => ({
             id: img.id,
             src: img.src,
-            status: 'approved',   // ✅ جميعها معتمدة
+            status: 'approved',
             uploadDate: new Date().toISOString()
         }));
 
-        let nextId = memeData.length + 1;
+        let nextId = Math.max(...memeData.map(m => m.id)) + 1 || 163;
         let isLoggedIn = false;
 
-        // ✅ إدارة الوضع الليلي (بدون تغيير)
+        // إدارة الوضع الليلي
         function initTheme() {
             const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
             if (prefersDark) {
@@ -496,7 +1022,7 @@
             }
         }
 
-        // رفع الصور (بدون تغيير)
+        // رفع الصور
         function handleImageUpload(event) {
             const file = event.target.files[0];
             if (!file) return;
@@ -508,9 +1034,11 @@
 
             const reader = new FileReader();
             reader.onload = function(e) {
+                // عرض المعاينة
                 document.getElementById('previewImage').src = e.target.result;
                 document.getElementById('previewContainer').style.display = 'block';
                 
+                // إضافة للميمز بانتظار المراجعة
                 const newMeme = {
                     id: nextId++,
                     src: e.target.result,
@@ -519,9 +1047,11 @@
                 };
                 memeData.push(newMeme);
                 
+                // عرض رسالة التأكيد
                 document.getElementById('confirmationMessage').style.display = 'block';
                 showMessage('success', '✅ تم رفع الصورة بنجاح!');
                 
+                // إخفاء المعاينة بعد فترة
                 setTimeout(() => {
                     document.getElementById('previewContainer').style.display = 'none';
                     document.getElementById('confirmationMessage').style.display = 'none';
@@ -573,7 +1103,7 @@
             });
         }
 
-        // إنشاء بطاقة ميمز (بدون تغيير)
+        // إنشاء بطاقة ميمز
         function createMemeCard(meme, isAdmin, index) {
             const card = document.createElement('div');
             card.className = 'image-card';
@@ -615,7 +1145,7 @@
             return card;
         }
 
-        // تحميل الميمز (بدون تغيير)
+        // تحميل الميمز
         async function downloadMeme(id, btn) {
             const meme = memeData.find(m => m.id === id);
             if (!meme) return;
@@ -650,6 +1180,7 @@
                 meme.status = 'approved';
                 renderPendingMemes();
                 updateStats();
+                renderApprovedMemes();
                 showMessage('success', '✅ تم اعتماد الميمز بنجاح!');
             }
         }
@@ -665,7 +1196,7 @@
             }
         }
 
-        // تحديث الإحصائيات (بدون تغيير)
+        // تحديث الإحصائيات
         function updateStats() {
             const pending = memeData.filter(m => m.status === 'pending').length;
             const approved = memeData.filter(m => m.status === 'approved').length;
@@ -675,7 +1206,7 @@
             document.getElementById('totalCount').textContent = memeData.length;
         }
 
-        // ✅ تسجيل الدخول (تم تغيير كلمة المرور وإخفاء البيانات)
+        // تسجيل الدخول
         function handleLogin() {
             const username = document.getElementById('username').value.trim();
             const password = document.getElementById('password').value;
@@ -702,7 +1233,7 @@
             showMessage('success', '✅ تم تسجيل الخروج');
         }
 
-        // عرض الرسائل (بدون تغيير)
+        // عرض الرسائل
         function showMessage(type, text) {
             const msg = document.getElementById(type === 'success' ? 'successMsg' : 'errorMsg');
             msg.textContent = text;
@@ -718,12 +1249,31 @@
             initTheme();
             renderApprovedMemes();
             
+            // تفعيل Enter لتسجيل الدخول
             document.getElementById('password').addEventListener('keypress', function(e) {
                 if (e.key === 'Enter') handleLogin();
             });
         });
 
-        // ⚠️ تم إلغاء الإضافة التلقائية للميمز التجريبي
+        // إضافة ميمز تجريبية تلقائياً للعرض
+        setInterval(() => {
+            if (Math.random() > 0.85) {
+                const colors = ['%233498db', '%232ecc71', '%23e74c3c', '%23f39c12', '%239b59b6'];
+                const color = colors[Math.floor(Math.random() * colors.length)];
+                const newMeme = {
+                    id: nextId++,
+                    src: `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='350'%3E%3Crect fill='${color}' width='400' height='350'/%3E%3Ctext x='50%25' y='50%25' font-family='Arial' font-size='22' fill='white' text-anchor='middle' dy='.3em'%3Eتمب جديد ${nextId-1} 🎉%3C/text%3E%3C/svg%3E`,
+                    status: 'pending',
+                    uploadDate: new Date().toISOString()
+                };
+                memeData.push(newMeme);
+                
+                if (isLoggedIn && document.getElementById('admin-page').classList.contains('active')) {
+                    renderPendingMemes();
+                    updateStats();
+                }
+            }
+        }, 45000);
     </script>
 </body>
 </html>
