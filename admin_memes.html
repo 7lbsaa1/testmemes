@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة التحكم بالميمز | lbsaa7</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif; }
+        body { background: #050814; color: #fff; padding: 25px; }
+        .container { max-width: 1100px; margin: 0 auto; }
+        
+        h2 { color: #2563eb; margin-bottom: 5px; font-size: 22px; }
+        p.sub { color: #a5a1ca; font-size: 14px; margin-bottom: 30px; }
+
+        .admin-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 25px; }
+        .review-card { background: #0e1630; border: 1px solid rgba(255,255,255,0.05); padding: 15px; border-radius: 20px; text-align: center; box-shadow: 0 10px 25px rgba(0,0,0,0.5); }
+        .review-card img { width: 100%; height: 220px; object-fit: cover; border-radius: 12px; background: #000; margin-bottom: 12px; }
+        .review-card h3 { font-size: 16px; margin-bottom: 15px; color: #fff; font-weight: 600; }
+        
+        .control-btns { display: flex; gap: 10px; }
+        .btn { flex: 1; padding: 11px; border: none; border-radius: 10px; font-weight: bold; cursor: pointer; font-size: 13px; display: inline-flex; align-items: center; justify-content: center; gap: 5px; transition: all 0.2s; }
+        .btn-approve { background: #22c55e; color: #000; }
+        .btn-approve:hover { background: #16a34a; transform: translateY(-2px); }
+        .btn-reject { background: #ff3366; color: #fff; }
+        .btn-reject:hover { background: #e11d48; transform: translateY(-2px); }
+        
+        .back-btn { color: #2563eb; text-decoration: none; font-weight: bold; margin-bottom: 20px; display: inline-block; font-size: 14px; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <a href="index.html" class="back-btn"><i class="fas fa-arrow-right"></i> العودة للموقع الرئيسي</a>
+        <h2>لوحة مراجعة التمبلتس والميمز المعلقة</h2>
+        <p class="sub">راجع طلبات الصور المرسلة من المستخدمين للموافقة على نشرها أو رفضها فوراً</p>
+
+        <div class="admin-grid" id="pending-box">جاري فحص السيرفر وتحميل الصور المنتظرة...</div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+    <script>
+        const firebaseConfig = { databaseURL: "https://admin-37e09-default-rtdb.firebaseio.com/" };
+        firebase.initializeApp(firebaseConfig);
+        const database = firebase.database();
+
+        // مراقبة داتا الصور المنتظرة وعرضها لايف
+        database.ref('pending_templates').on('value', (snapshot) => {
+            let box = document.getElementById('pending-box');
+            box.innerHTML = '';
+            
+            if(snapshot.exists()) {
+                snapshot.forEach(child => {
+                    let key = child.key;
+                    let data = child.val();
+                    
+                    box.innerHTML += `
+                        <div class="review-card">
+                            <img src="${data.image}">
+                            <h3>${data.title}</h3>
+                            <div class="control-btns">
+                                <button class="btn btn-approve" onclick="approveTemplate('${key}', '${data.title}', '${data.image}')"><i class="fas fa-check"></i> نشر بالموقع</button>
+                                <button class="btn btn-reject" onclick="rejectTemplate('${key}')"><i class="fas fa-trash"></i> حذف</button>
+                            </div>
+                        </div>
+                    `;
+                });
+            } else {
+                box.innerHTML = `
+                    <div style="grid-column:1/-1; text-align:center; padding:50px; color:#555;">
+                        <i class="fas fa-check-circle" style="font-size:45px; color:#22c55e; margin-bottom:15px; display:block;"></i>
+                        <h3>كل تمام يا فنان! لا توجد صور في قائمة الانتظار حالياً.</h3>
+                    </div>`;
+            }
+        });
+
+        // دالة الموافقة والنشر
+        function approveTemplate(key, title, image) {
+            database.ref('approved_templates').push({
+                title: title,
+                image: image
+            }).then(() => {
+                // حذفها تلقائياً من الانتظار بعد النشر بنجاح
+                database.ref('pending_templates/' + key).remove();
+            });
+        }
+
+        // دالة الرفض والحذف النهائي
+        function rejectTemplate(key) {
+            if(confirm('هل أنت متأكد من رفض وحذف هذا التمبلت نهائياً؟')) {
+                database.ref('pending_templates/' + key).remove();
+            }
+        }
+    </script>
+</body>
+</html>
