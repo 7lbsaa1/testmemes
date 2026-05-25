@@ -3,36 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>lbsaa7 | أكبر منصة لتمبلتس الميمز</title>
+    <title>lbsaa7 | منصة تمبلتس الميمز</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif; }
-        body { background: radial-gradient(circle at center, #0e1630 0%, #050814 100%); color: #fff; min-height: 100vh; padding-bottom: 50px; }
+        /* المتغيرات الأساسية لدعم الوضع الليلي والنهاري */
+        :root {
+            --bg-gradient: radial-gradient(circle at center, #0e1630 0%, #050814 100%);
+            --text-color: #fff;
+            --card-bg: rgba(255, 255, 255, 0.02);
+            --card-border: rgba(255, 255, 255, 0.05);
+            --sub-text: #a5a1ca;
+            --header-border: rgba(255, 255, 255, 0.05);
+            --input-bg: rgba(0, 0, 0, 0.4);
+        }
+
+        [data-theme="light"] {
+            --bg-gradient: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+            --text-color: #1f2937;
+            --card-bg: rgba(0, 0, 0, 0.03);
+            --card-border: rgba(0, 0, 0, 0.08);
+            --sub-text: #4b5563;
+            --header-border: rgba(0, 0, 0, 0.08);
+            --input-bg: #fff;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif; transition: background 0.3s, color 0.3s; }
+        body { background: var(--bg-gradient); color: var(--text-color); min-height: 100vh; padding-bottom: 50px; }
         
-        /* الهيدر واللوجو */
-        header { padding: 30px; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.05); backdrop-filter: blur(10px); }
-        .logo-area { font-size: 45px; font-weight: 800; color: #fff; direction: ltr; margin-bottom: 10px; display: inline-block; }
+        /* الهيدر وعناصر التحكم */
+        header { padding: 30px; text-align: center; border-bottom: 1px solid var(--header-border); position: relative; }
+        .logo-area { font-size: 45px; font-weight: 800; color: var(--text-color); direction: ltr; margin-bottom: 10px; display: inline-block; }
         .logo-area span { color: #2563eb; }
         
-        /* زرار الرفع الفخم */
-        .upload-trigger { padding: 14px 30px; background: linear-gradient(135deg, #2563eb, #1d4ed8); color: #fff; border: none; border-radius: 50px; font-weight: bold; cursor: pointer; font-size: 16px; box-shadow: 0 4px 20px rgba(37, 99, 235, 0.4); transition: all 0.3s; }
-        .upload-trigger:hover { transform: translateY(-3px); box-shadow: 0 6px 25px rgba(37, 99, 235, 0.6); }
+        /* أزرار التبديل والرفع */
+        .theme-toggle { position: absolute; top: 30px; left: 30px; padding: 10px 15px; background: var(--card-bg); border: 1px solid var(--card-border); color: var(--text-color); border-radius: 12px; cursor: pointer; font-size: 16px; }
+        .upload-trigger { padding: 14px 30px; background: linear-gradient(135deg, #2563eb, #1d4ed8); color: #fff; border: none; border-radius: 50px; font-weight: bold; cursor: pointer; font-size: 16px; box-shadow: 0 4px 20px rgba(37, 99, 235, 0.4); margin-top: 10px; }
+        .upload-trigger:hover { transform: translateY(-3px); }
 
         .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
         h2 { font-size: 20px; margin: 25px 0 15px 0; color: #2563eb; border-right: 4px solid #2563eb; padding-right: 10px; }
 
-        /* شبكة عرض الصور */
+        /* شبكة الميمز الزجاجية بدون كابشن */
         .memes-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 20px; }
-        .meme-card { background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); padding: 12px; border-radius: 16px; text-align: center; backdrop-filter: blur(5px); transition: all 0.3s; }
-        .meme-card:hover { transform: translateY(-5px); border-color: rgba(37, 99, 235, 0.4); box-shadow: 0 10px 20px rgba(0,0,0,0.3); }
+        .meme-card { background: var(--card-bg); border: 1px solid var(--card-border); padding: 12px; border-radius: 16px; display: flex; flex-direction: column; gap: 12px; backdrop-filter: blur(5px); transition: transform 0.3s, border-color 0.3s; }
+        .meme-card:hover { transform: translateY(-5px); border-color: rgba(37, 99, 235, 0.4); }
         .meme-card img { width: 100%; height: 220px; object-fit: cover; border-radius: 10px; background: #000; }
-        .meme-card h4 { font-size: 14px; margin-top: 10px; color: #a5a1ca; font-weight: 500; }
+        
+        /* زر التحميل المباشر للهاتف */
+        .download-btn { width: 100%; padding: 10px; background: #2563eb; color: #fff; border: none; border-radius: 10px; font-weight: bold; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: 8px; text-decoration: none; font-size: 14px; }
+        .download-btn:hover { background: #1d4ed8; }
 
-        /* نافذة الرفع المنبثقة Glassmorphism */
+        /* نافذة الرفع */
         .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 1000; justify-content: center; align-items: center; backdrop-filter: blur(8px); }
-        .modal-content { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255,255,255,0.1); padding: 35px 25px; border-radius: 24px; width: 90%; max-width: 420px; text-align: center; }
-        .modal-content input[type="text"] { width: 100%; padding: 14px; margin-bottom: 15px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.15); background: rgba(0,0,0,0.4); color: #fff; text-align: right; outline: none; }
-        .modal-content input[type="text"]:focus { border-color: #2563eb; }
+        .modal-content { background: var(--bg-gradient); border: 1px solid var(--card-border); padding: 35px 25px; border-radius: 24px; width: 90%; max-width: 420px; text-align: center; }
+        .modal-content input[type="text"] { width: 100%; padding: 14px; margin-bottom: 15px; border-radius: 12px; border: 1px solid var(--card-border); background: var(--input-bg); color: var(--text-color); text-align: right; outline: none; }
         .modal-btns { display: flex; gap: 10px; margin-top: 15px; }
         .btn-submit { flex: 1; padding: 13px; background: #22c55e; color: #000; border: none; border-radius: 12px; font-weight: bold; cursor: pointer; }
         .btn-cancel { flex: 1; padding: 13px; background: #ff3366; color: #fff; border: none; border-radius: 12px; font-weight: bold; cursor: pointer; }
@@ -41,26 +65,25 @@
 <body>
 
     <header>
+        <button class="theme-toggle" onclick="toggleTheme()" id="theme-btn"><i class="fas fa-sun"></i> الوضع النهاري</button>
         <div class="logo-area">lbsaa<span>7</span></div>
-        <p style="color: #a5a1ca; margin-bottom: 20px; font-size: 14px;">مكتبة التمبلتس المفتوحة للمبدعين</p>
+        <p style="color: var(--sub-text); margin-bottom: 20px; font-size: 14px;">مكتبة التمبلتس المفتوحة للمبدعين</p>
         <button class="upload-trigger" onclick="openUploadModal()"><i class="fas fa-plus-circle"></i> شارك تمبلت من عندك</button>
     </header>
 
     <div class="container">
-        <h2>🔥 تمبلتس جديدة من اختيار الأعضاء</h2>
-        <div class="memes-grid" id="firebase-approved-grid">
-            </div>
+        <h2>🔥 تمبلتس معتمدة ومرفوعة حديثاً</h2>
+        <div class="memes-grid" id="firebase-approved-grid"></div>
 
         <h2>قائمة التمبلتس الأساسية (${90} صورة)</h2>
-        <div class="memes-grid" id="local-memes-grid">
-            </div>
+        <div class="memes-grid" id="local-memes-grid"></div>
     </div>
 
     <div id="uploadModal" class="modal">
         <div class="modal-content">
-            <h3 style="margin-bottom: 20px; color: #fff;">إرسال تمبلت للمراجعة</h3>
-            <input type="text" id="meme-title" placeholder="اكتب اسم التمبلت الميم (مثال: ميم حمدي الميرغني)">
-            <input type="file" id="meme-file" accept="image/*" style="width: 100%; color: #fff; margin-bottom: 20px; font-size: 13px;">
+            <h3 style="margin-bottom: 20px; color: var(--text-color);">إرسال تمبلت للمراجعة</h3>
+            <input type="text" id="meme-title" placeholder="اكتب اسم التمبلت الميم للتوثيق بالأدمن فقط">
+            <input type="file" id="meme-file" accept="image/*" style="width: 100%; color: var(--text-color); margin-bottom: 20px; font-size: 13px;">
             <div class="modal-btns">
                 <button class="btn-submit" onclick="submitTemplate()">إرسال للأدمن</button>
                 <button class="btn-cancel" onclick="closeUploadModal()">إلغاء</button>
@@ -75,22 +98,45 @@
         firebase.initializeApp(firebaseConfig);
         const database = firebase.database();
 
-        // 1. توليد الـ 90 صورة المحلية تلقائياً بالمسار المظبوط بتاعك
+        // 1. تشغيل وتوليد الـ 90 صورة الأساسية بمسارها مع أزرار التحميل المباشر للهاتف
         let localGrid = document.getElementById('local-memes-grid');
         for (let i = 1; i <= 90; i++) {
             localGrid.innerHTML += `
                 <div class="meme-card">
-                    <img src="meme${i}.jpg" alt="تمبلت ${i}">
-                    <h4>تمبلت ميم رقم ${i}</h4>
+                    <img src="meme${i}.jpg" alt="Meme ${i}">
+                    <a href="meme${i}.jpg" download="lbsaa7_meme_${i}.jpg" class="download-btn">
+                        <i class="fas fa-cloud-download-alt"></i> تحميل للهاتف
+                    </a>
                 </div>
             `;
         }
 
-        // 2. التحكم في فتح وقفل نافذة الرفع
+        // 2. تفعيل الوضع الليلي والنهاري وحفظ الخيار في المتصفح
+        function toggleTheme() {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            let targetTheme = 'dark';
+            let btnHTML = '<i class="fas fa-sun"></i> الوضع النهاري';
+
+            if (currentTheme !== 'light') {
+                targetTheme = 'light';
+                btnHTML = '<i class="fas fa-moon"></i> الوضع الليلي';
+            }
+
+            document.documentElement.setAttribute('data-theme', targetTheme);
+            document.getElementById('theme-btn').innerHTML = btnHTML;
+            localStorage.setItem('theme', targetTheme);
+        }
+
+        // استرجاع الثيم المفضل للمستخدم عند التحميل
+        if(localStorage.getItem('theme') === 'light') {
+            document.documentElement.setAttribute('data-theme', 'light');
+            document.getElementById('theme-btn').innerHTML = '<i class="fas fa-moon"></i> الوضع الليلي';
+        }
+
         function openUploadModal() { document.getElementById('uploadModal').style.display = 'flex'; }
         function closeUploadModal() { document.getElementById('uploadModal').style.display = 'none'; }
 
-        // 3. رفع صورة جديدة كـ Base64 لفرع الانتظار
+        // 3. رفع صورة جديدة للأدمن كمراجعة
         function submitTemplate() {
             let title = document.getElementById('meme-title').value.trim();
             let fileInput = document.getElementById('meme-file');
@@ -112,24 +158,30 @@
             }
         }
 
-        // 4. جلب وعرض الصور المعتمدة لايف من الفايربيز
+        // 4. جلب وعرض الميمز المعتمدة لايف من السيرفر مع إمكانية تنزيلها مباشرة للهاتف
         database.ref('approved_templates').on('value', (snapshot) => {
             let fireGrid = document.getElementById('firebase-approved-grid');
             fireGrid.innerHTML = '';
             if(snapshot.exists()) {
-                snapshot.forEach(child => {
+                snapshot.forEach((child, index) => {
                     let data = child.val();
                     fireGrid.innerHTML += `
-                        <div class="meme-card" style="border-color: rgba(34, 197, 94, 0.2);">
+                        <div class="meme-card" style="border-color: rgba(34, 197, 94, 0.25);">
                             <img src="${data.image}">
-                            <h4 style="color: #22c55e;">${data.title} ✨</h4>
+                            <a href="${data.image}" download="lbsaa7_user_meme_${index}.jpg" class="download-btn" style="background:#22c55e; color:#000;">
+                                <i class="fas fa-cloud-download-alt"></i> تحميل للهاتف
+                            </a>
                         </div>
                     `;
                 });
             } else {
-                fireGrid.innerHTML = '<p style="color: #555; font-weight: 500; grid-column: 1/-1; text-align: center; padding: 10px;">لا توجد تمبلتس مرفوعة من الأعضاء حالياً، شارك أول تمبلت!</p>';
+                fireGrid.innerHTML = '<p style="color: var(--sub-text); grid-column: 1/-1; text-align: center; padding: 10px;">لا توجد تمبلتس مرفوعة من الأعضاء حالياً، شارك أول تمبلت!</p>';
             }
         });
     </script>
+    
+    <footer style="text-align: center; padding: 40px 0 20px 0; border-top: 1px solid var(--header-border); margin-top: 5px;">
+        <a href="admin_memes.html" style="color: transparent; text-decoration: none; font-size: 11px; cursor: default;" onmouseover="this.style.color='#2563eb'" onmouseout="this.style.color='transparent'">لوحة التحكم</a>
+    </footer>
 </body>
 </html>
